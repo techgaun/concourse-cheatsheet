@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [Fly CLI](#fly-cli)
-- [Pipleline Configurations](pipleline-configurations)
+- [Pipleline Configurations](#pipleline-configurations)
 
 ## Fly CLI
 
