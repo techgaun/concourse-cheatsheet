@@ -1,4 +1,5 @@
-# concourse-cheatsheet [![Concourse CI](https://avatars1.githubusercontent.com/u/7809479?s=50&v=4)](https://concourse-ci.org/)
+[![Concourse CI](https://avatars1.githubusercontent.com/u/7809479?s=50&v=4)](https://concourse-ci.org/)
+# concourse-cheatsheet
 
 > Cheatsheet for working with Concourse CI
 
