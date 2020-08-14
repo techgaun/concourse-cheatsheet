@@ -2,6 +2,11 @@
 
 > Cheatsheet for working with Concourse CI
 
+## Table of Contents
+
+- [Fly CLI](#fly-cli)
+- [Pipleline Configurations](pipleline-configurations)
+
 ## Fly CLI
 
 ### [Fly completion](https://concourse-ci.org/fly.html#fly-completion)
