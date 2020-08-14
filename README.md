@@ -100,6 +100,9 @@ fly -t <your_target> expose-pipeline --pipeline <YOUR_PIPELINE>
 
 ### YAML anchors to re-use configuration blocks
 
+You can use YAML anchor to re-use configuration blocks and remove duplicates.
+Often times, you can use `file` directive but still the anchor syntax can be useful.
+
 ```yaml
 # this is an example from concourse docs
 # the following repetitive blocks can be shortened using yaml anchor syntax
@@ -144,6 +147,50 @@ resources:
       repository: engineering/elixir
       tag: 1.10.1
       <<: *aws-ecr-config
+```
+
+Here's another example:
+
+```yaml
+jobs:
+- name: job-1
+  plan:
+    - &task-1
+      task: task-1
+      config:
+        platform: linux
+
+    - &task-2
+      task: task-2
+      config:
+        platform: linux
+- name: job-2
+  - *task-1
+  - *task-2
+```
+
+### Container CPU and Memory Limits for Task
+
+```yaml
+# you can configure and override default container limits
+# cpu - max amount of CPU available to task container, measured in shares
+# memory - max amount of memory available to task container
+# 0 means unlimited
+jobs:
+  - name: container-limits-job
+    plan:
+      - task: task-with-container-limits
+        config:
+          platform: linux
+          image_resource:
+            type: mock
+            source: {mirror_self: true}
+          container_limits:
+            cpu: 512
+            memory: 1GB
+          run:
+            path: sh
+            args: ["-c", "echo hello"]
 ```
 
 ## Miscellaneous
