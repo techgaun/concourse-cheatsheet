@@ -2,6 +2,9 @@
 
 > Cheatsheet for working with Concourse CI
 
+This cheatsheet lists various useful tips and tricks to use with Concourse CI
+and thus omits the very basics such as logging in or setting pipeline for yaml file.
+
 ## Table of Contents
 
 - [Fly CLI](#fly-cli)
@@ -61,6 +64,15 @@ fly -t <your_target> curl /api/v1/info
 
 fly -t <your_target> curl /api/v1/builds
 > json_array_of build_lists
+```
+
+### Make pipeline visible to unauthenticated users
+
+This is often useful for open-source projects so that the build pipeline
+is visible for unauthenticated users.
+
+```shell
+fly -t <your_target> expose-pipeline --pipeline <YOUR_PIPELINE>
 ```
 
 ## Pipleline Configurations
@@ -137,3 +149,4 @@ resources:
 
 - [Concourse CI Pipeline Dashboard](https://ci.concourse-ci.org/) - Example dashboard/pipelines
 - [Concourse Internals](https://concourse-ci.org/internals.html) - Deeper understanding of Concourse
+- [Concourse Tutorial by Stark & Wayne](https://concoursetutorial.com/) - A great introduction to Concourse
