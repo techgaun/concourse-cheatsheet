@@ -6,6 +6,7 @@
 
 - [Fly CLI](#fly-cli)
 - [Pipleline Configurations](#pipleline-configurations)
+- [Links](#links)
 
 ## Fly CLI
 
@@ -50,6 +51,16 @@ fly -t <your_target> intercept --job <PIPELINE>/<JOB_NAME>
 # simple example to connect to a particular pipeline's specific job and run specific binary
 # this is useful to specify custom shell such as sh in alpine or any arbitrary command during intercept
 fly -t <your_target> intercept --job <PIPELINE>/<JOB_NAME> <your_custom_binary>
+```
+
+### Arbitrary API requests to your Concourse CI
+
+```shell
+fly -t <your_target> curl /api/v1/info
+> {"version":"6.1.0","worker_version":"2.2","external_url":"https://concourse.example.com"}
+
+fly -t <your_target> curl /api/v1/builds
+> json_array_of build_lists
 ```
 
 ## Pipleline Configurations
@@ -121,3 +132,8 @@ resources:
       tag: 1.10.1
       <<: *aws-ecr-config
 ```
+
+## Links
+
+- [Concourse CI Pipeline Dashboard](https://ci.concourse-ci.org/) - Example dashboard/pipelines
+- [Concourse Internals](https://concourse-ci.org/internals.html) - Deeper understanding of Concourse
