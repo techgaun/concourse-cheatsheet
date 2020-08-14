@@ -2,13 +2,14 @@
 
 > Cheatsheet for working with Concourse CI
 
-This cheatsheet lists various useful tips and tricks to use with Concourse CI
+This cheatsheet lists various useful tips and tricks to use with [Concourse CI](https://concourse-ci.org/)
 and thus omits the very basics such as logging in or setting pipeline for yaml file.
 
 ## Table of Contents
 
 - [Fly CLI](#fly-cli)
 - [Pipleline Configurations](#pipleline-configurations)
+- [Miscellaneous](#miscellaneous)
 - [Links](#links)
 
 ## Fly CLI
@@ -143,6 +144,41 @@ resources:
       repository: engineering/elixir
       tag: 1.10.1
       <<: *aws-ecr-config
+```
+
+## Miscellaneous
+
+### Build Badges
+
+- You can get a badge for your pipeline with the following URL:
+
+```
+/api/v1/teams/{team}/pipelines/{pipeline}/badge
+```
+
+Example from Concourse CI itself: [![Concourse CI Build](https://ci.concourse-ci.org/api/v1/teams/main/pipelines/concourse/badge)](https://ci.concourse-ci.org/teams/main/pipelines/concourse)
+```
+# snippet for above SVG
+[![Concourse CI Build](https://ci.concourse-ci.org/api/v1/teams/main/pipelines/concourse/badge)](https://ci.concourse-ci.org/teams/main/pipelines/concourse)
+```
+
+- You can get a badge for your pipeline's specific jobs with the following URL:
+
+```
+/api/v1/teams/{team}/pipelines/{pipeline}/jobs/{job}/badge
+```
+
+Example from Concourse CI itself: [![Concourse CI Unit Tests](https://ci.concourse-ci.org/api/v1/teams/main/pipelines/concourse/jobs/unit/badge)](https://ci.concourse-ci.org/teams/main/pipelines/concourse/jobs/unit)
+
+```
+# snippet for above SVG
+[![Concourse CI Unit Tests](https://ci.concourse-ci.org/api/v1/teams/main/pipelines/concourse/jobs/unit/badge)](https://ci.concourse-ci.org/teams/main/pipelines/concourse/jobs/unit)
+```
+
+- Additionally, Concourse API supports a team's pipeline in a [CCMenu](http://ccmenu.org/) compatible XML file.
+
+```
+/api/v1/teams/{team}/cc.xml
 ```
 
 ## Links
