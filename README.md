@@ -123,7 +123,7 @@ large_value: &my_anchor
 duplicate_value: *my_anchor
 ```
 
-The same anchor syntax can be used to spread yaml object.
+The same anchor syntax can be used to merge yaml objects.
 On the example below, you can see how we can avoid duplicate
 AWS ECR configuration by using anchor.
 
