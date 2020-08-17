@@ -213,6 +213,40 @@ jobs:
             args: ["-c", "echo hello"]
 ```
 
+### Pipeline Organization
+
+While yaml tricks are nice for smaller pipelines, complex pipelines
+benefit from a well-defined structure. Check out the [command schema](https://concourse-ci.org/tasks.html#schema.command)
+and [task step config](https://concourse-ci.org/jobs.html#schema.step)
+that shows an alternative `file` that allows you to point to a `.yml`
+containing the task config.
+
+A good starting example follows:
+
+```shell
+techgaun at techgaun in /home/techgaun/projects/rpi-ha
+$ tre
+      1 .
+      2 └── .ci
+      3     ├── dockerfiles
+      4     │   ├── Dockerfile.alpine
+      5     │   ├── Dockerfile.buster
+      6     │   └── Dockerfile.distroless
+      7     ├── pipelines
+      8     │   ├── k8-build.yml
+      9     │   └── swarm-build.yml
+     10     ├── scripts
+     11     │   ├── build
+     12     │   ├── init
+     13     │   └── test
+     14     └── tasks
+     15         ├── build.yml
+     16         ├── e2e.yml
+     17         └── test.yml
+     18 
+     19 5 directories, 11 files
+```
+
 ## Miscellaneous
 
 ### Build Badges
@@ -259,3 +293,10 @@ Example from Concourse CI itself: [![Concourse CI Unit Tests](https://ci.concour
 - [Concourse CI Pipeline Dashboard](https://ci.concourse-ci.org/) - Example dashboard/pipelines
 - [Concourse Internals](https://concourse-ci.org/internals.html) - Deeper understanding of Concourse
 - [Concourse Tutorial by Stark & Wayne](https://concoursetutorial.com/) - A great introduction to Concourse
+- [Pipelines Used by Concourse Team](https://github.com/concourse/pipelines) - A collection of pipelines used by the Concourse Team
+- [Sample Concourse Pipeline Examples](https://github.com/concourse/concourse/tree/master/testflight/fixtures) - Fixtures from Concourse source code to understand pipelines better
+
+## Authors
+
+- [techgaun](https://github.com/techgaun)
+- [bpote](https://github.com/bpote)
