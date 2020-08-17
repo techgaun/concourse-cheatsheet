@@ -77,6 +77,15 @@ is visible for unauthenticated users.
 fly -t <your_target> expose-pipeline --pipeline <YOUR_PIPELINE>
 ```
 
+### Format your pipeline
+
+Concourse has a handy fly command to format your pipeline in a "canonical" form.
+Omitting `-w` / `--write` would print formatted pipeline on stdout instead.
+
+```shell
+fly format-pipeline -c <YOUR_PIPELINE.yml> -w
+```
+
 ## Pipleline Configurations
 
 ### Root privileges in container for your jobs
