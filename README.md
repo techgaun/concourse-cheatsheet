@@ -86,6 +86,14 @@ Omitting `-w` / `--write` would print formatted pipeline on stdout instead.
 fly format-pipeline -c <YOUR_PIPELINE.yml> -w
 ```
 
+### Different team in your fly commands
+
+By default, concourse sets team on a target when you login and its cumbersome
+to manage multiple targets just to be working on a different team space. Fly
+commands support `--team` so you can specify another team name in a single target.
+However, this is a work in progress as tracked [HERE](https://github.com/concourse/concourse/issues/5215)
+so make sure you check the progress in above issue or by checking the help information.
+
 ## Pipleline Configurations
 
 ### Root privileges in container for your jobs
