@@ -11,6 +11,7 @@ and thus omits the very basics such as logging in or setting pipeline for yaml f
 - [Fly CLI](#fly-cli)
 - [Pipleline Configurations](#pipleline-configurations)
 - [Miscellaneous](#miscellaneous)
+- [Editor Support](#editor-support)
 - [Links](#links)
 
 ## Fly CLI
@@ -81,6 +82,7 @@ fly -t <your_target> expose-pipeline --pipeline <YOUR_PIPELINE>
 
 Concourse has a handy fly command to format your pipeline in a "canonical" form.
 Omitting `-w` / `--write` would print formatted pipeline on stdout instead.
+This is useful when you've made a mess of your yaml configuration formatting.
 
 ```shell
 fly format-pipeline -c <YOUR_PIPELINE.yml> -w
@@ -245,6 +247,12 @@ Example from Concourse CI itself: [![Concourse CI Unit Tests](https://ci.concour
 ```
 /api/v1/teams/{team}/cc.xml
 ```
+
+## Editor Support
+
+- [Concourse CI Pipeline Editor](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-concourse) - Provides validation and content assist for Concourse CI pipeline and task configuration yml files
+- [Concourse-Vis](https://atom.io/packages/concourse-vis) - A plugin to preview Concourse pipelines in Atom.
+
 
 ## Links
 
