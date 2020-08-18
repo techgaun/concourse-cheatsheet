@@ -4,7 +4,7 @@
 > Cheatsheet for working with Concourse CI
 
 This cheatsheet lists various useful tips and tricks to use with [Concourse CI](https://concourse-ci.org/)
-and thus omits the very basics such as logging in or setting pipeline for yaml file.
+and thus omits the very basics such as logging in or setting pipeline from yaml file.
 
 ## Table of Contents
 
